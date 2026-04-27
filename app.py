@@ -3,9 +3,11 @@ from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 import torch.nn.functional as F
 
-# Load model
-model = BertForSequenceClassification.from_pretrained("sentiment_model")
-tokenizer = BertTokenizer.from_pretrained("sentiment_model")
+# Load model from Hugging Face
+model_name = "Nikki435/sentiment-model"
+
+model = BertForSequenceClassification.from_pretrained(model_name)
+tokenizer = BertTokenizer.from_pretrained(model_name)
 
 st.title("🎬 IMDB Sentiment Analysis App")
 
